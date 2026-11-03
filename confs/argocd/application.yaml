@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -16,3 +17,23 @@ spec:
         automated:
             prune: true
             selfHeal: true
+=======
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: dev-app
+    namespace: argocd
+spec:
+    project: default
+    source:
+        repoURL: https://github.com/Flux73/test
+        targetRevision: HEAD
+        path: confs/k8s-manifests
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: dev
+    syncPolicy:
+        automated:
+            prune: true
+            selfHeal: true
+>>>>>>> 1657a2d3f31a046a72cd6d8abc4991e06896e753
