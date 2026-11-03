@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,25 +19,3 @@ spec:
                   image: wil42/playground:v2
                   ports:
                       - containerPort: 8888
-=======
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-    name: dev-deployment
-    namespace: dev
-spec:
-    replicas: 1
-    selector:
-        matchLabels:
-            app: dev-app
-    template:
-        metadata:
-            labels:
-                app: dev-app
-        spec:
-            containers:
-                - name: dev-app
-                  image: wil42/playground:v1
-                  ports:
-                      - containerPort: 8888
->>>>>>> 1657a2d3f31a046a72cd6d8abc4991e06896e753
